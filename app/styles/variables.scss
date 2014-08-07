@@ -7,10 +7,10 @@ $dot-size: 20px;
 
 $diameter: 800px;
 $semicircle: 180;
-$number-of-lines: 5;
+$number-of-lines: 2;
 $degree-of-rotation: $semicircle / $number-of-lines;
 
 $animation-name: move-balls;
-$animation-duration: 3s;
+$animation-duration: 6s;
 $animation-timing: ease-in-out; /* linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n) */
 $animation-iteration: infinite;

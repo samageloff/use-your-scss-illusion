@@ -21,7 +21,7 @@ body {
   left: 50%;
   position: absolute;
   top: 0;
-  transition : border 250ms ease-in-out;
+  transition: border 250ms ease-in-out;
 }
 
 .circle:hover .line,
@@ -29,7 +29,7 @@ body {
   border: 1px solid rgba($color-magenta, .5);
 }
 
-.line:after {
+.line::after {
   @include animation($animation-name, $animation-duration, $animation-timing, $animation-iteration);
   background: $color-magenta;
   border-radius: $border-radius;
@@ -42,13 +42,13 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-@for $i from 0 through $number-of-lines {
+@for $i from 1 through $number-of-lines {
   .line:nth-child(#{$i}) {
     transform: rotate($degree-of-rotation * $i + deg)
   }
 }
 
-@for $i from 0 through $number-of-lines {
+@for $i from 1 through $number-of-lines {
   .line:nth-child(#{$i}):after {
     animation-delay: ($i / $number-of-lines * $animation-duration) / 2;
   }
