@@ -1,0 +1,61 @@
+@import 'mixins';
+@import 'variables';
+
+body {
+  background-color: #FFF;
+  margin-top: 2em;
+}
+
+.circle {
+  background-color: $color-twilight;
+  border-radius: $border-radius;
+  height: $diameter;
+  margin: 0 auto;
+  position: relative;
+  width: $diameter;
+}
+
+.line {
+  bottom: 0;
+  border: 1px solid rgba($color-magenta, 0);
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transition : border 250ms ease-in-out;
+}
+
+.circle:hover .line,
+.circle.active .line {
+  border: 1px solid rgba($color-magenta, .5);
+}
+
+.line:after {
+  @include animation($animation-name, $animation-duration, $animation-timing, $animation-iteration);
+  background: $color-magenta;
+  border-radius: $border-radius;
+  content: '';
+  left: - $dot-size / 2;
+  position: absolute;
+  height: $dot-size;
+  top: 0;
+  width: $dot-size;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+@for $i from 0 through $number-of-lines {
+  .line:nth-child(#{$i}) {
+    transform: rotate($degree-of-rotation * $i + deg)
+  }
+}
+
+@for $i from 0 through $number-of-lines {
+  .line:nth-child(#{$i}):after {
+    animation-delay: ($i / $number-of-lines * $animation-duration) / 2;
+  }
+}
+
+@include keyframe($animation-name) {
+  50% {
+    transform: translate(0, $diameter - $dot-size);
+  }
+}
