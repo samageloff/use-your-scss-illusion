@@ -1,8 +1,10 @@
 $('#toggle-lines').on('click', function() {
     'use strict';
-    $('.circle').toggleClass('active');
+    var $circle = $('.circle');
 
-    if ($('.circle').hasClass('active')) {
+    $circle.toggleClass('active');
+
+    if ($circle.hasClass('active')) {
         $(this).text('Hide lines');
     }
     else {
