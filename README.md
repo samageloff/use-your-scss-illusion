@@ -4,9 +4,10 @@ I recently came across a nifty “illusion” on the web, involving dots that ap
 
 Re-creating this with HTML & SCSS made for a fun web experiment.
 
+## Read the blog post
+http://www.hugeinc.com/ideas/perspective/use-your-scss-illusion
 
 ## Getting started
-
 * git clone https://github.com/samageloff/use-your-scss-illusion.git
 * npm install
 * grunt serve

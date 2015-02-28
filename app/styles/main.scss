@@ -1,5 +1,38 @@
-@import 'mixins';
-@import 'variables';
+// Mixins
+@mixin animation ($animation-name, $animation-duration, $animation-timing, $animation-iteration) {
+  -webkit-animation: $animation-name $animation-duration $animation-timing $animation-iteration;
+     -moz-animation: $animation-name $animation-duration $animation-timing $animation-iteration;
+          animation: $animation-name $animation-duration $animation-timing $animation-iteration;
+}
+
+@mixin keyframe ($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+// Variables
+$color-magenta: #EF227F;
+$color-twilight: #1C1B29;
+
+$border-radius: 50%;
+$dot-size: 10px;
+
+$diameter: 800px;
+$semicircle: 180;
+$number-of-lines: 85;
+$degree-of-rotation: $semicircle / $number-of-lines;
+
+$animation-name: move-balls;
+$animation-duration: 2s;
+$animation-timing: linear; /* linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n) */
+$animation-iteration: infinite;
 
 body {
   background-color: #FFF;
@@ -49,7 +82,7 @@ body {
 }
 
 @for $i from 1 through $number-of-lines {
-  .line:nth-child(#{$i}):after {
+  .line:nth-child(#{$i})::after {
     animation-delay: ($i / $number-of-lines * $animation-duration) / 2;
   }
 }

@@ -3,14 +3,14 @@ $color-magenta: #EF227F;
 $color-twilight: #1C1B29;
 
 $border-radius: 50%;
-$dot-size: 20px;
+$dot-size: 10px;
 
 $diameter: 800px;
 $semicircle: 180;
-$number-of-lines: 2;
+$number-of-lines: 85;
 $degree-of-rotation: $semicircle / $number-of-lines;
 
 $animation-name: move-balls;
-$animation-duration: 6s;
-$animation-timing: ease-in-out; /* linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n) */
+$animation-duration: 2s;
+$animation-timing: ease-out; /* linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n) */
 $animation-iteration: infinite;
